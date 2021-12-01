@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import DateTimePicker from "react-datetime-picker";
 import { Link } from "react-router-dom";
+import db_url from "./../address";
 
 function CreateExercise() {
   const [exercise, setExercise] = useState({});
@@ -19,19 +20,16 @@ function CreateExercise() {
   async function clickHandler(props) {
     console.log(exercise);
     if (eid) {
-      const result = await fetch(
-        `http://localhost:5000/exercises/update/${eid}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(exercise),
-        }
-      );
+      const result = await fetch(`${db_url}/exercises/update/${eid}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(exercise),
+      });
     } else {
-      const result = await fetch("http://localhost:5000/exercises/add", {
+      const result = await fetch(`${db_url}/exercises/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,13 +43,13 @@ function CreateExercise() {
   }
 
   async function fetchUsersAndExercise() {
-    const result2 = await fetch(`http://localhost:5000/exercises/${eid}`);
+    const result2 = await fetch(`${db_url}/exercises/${eid}`);
     result2.json().then((data) => {
       setExercise(data);
     });
-    const result3 = await fetch("http://localhost:5000/exercises");
+    const result3 = await fetch(`${db_url}http://localhost:5000/exercises`);
     result3.json().then((data) => setExercises(exercises));
-    const result = await (await fetch("http://localhost:5000/users"))
+    const result = await (await fetch(`${db_url}/users`))
       .json()
       .then((data) => {
         // setUsers(data);

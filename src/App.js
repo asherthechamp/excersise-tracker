@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ExercisesList from "./components/ExercisesList";
-import EditExercise from "./components/EditExercise";
 import CreateUser from "./components/CreateUser";
 import CreateExercise from "./components/CreateExercise";
 import Navbar from "./components/Navbar";

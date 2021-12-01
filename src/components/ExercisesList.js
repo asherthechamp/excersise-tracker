@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CreateExercise from "./CreateExercise";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import db_url from "../address";
 
 function ExercisesList() {
   const [exercises, setExercises] = useState([]);
@@ -9,7 +10,7 @@ function ExercisesList() {
 
   useEffect(
     async function fetchData() {
-      const result = await fetch("http://localhost:5000/exercises");
+      const result = await fetch(`${db_url}/exercises`);
       result.json().then((data) => {
         setExercises(data);
         console.log(exercises);
@@ -46,7 +47,7 @@ function ExercisesList() {
   );
 
   function handleDelete(id) {
-    fetch(`http://localhost:5000/exercises/${id}`, {
+    fetch(`${db_url}/exercises/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

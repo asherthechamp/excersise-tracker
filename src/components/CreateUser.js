@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useLocation } from "react";
+import db_url from "../address";
 
 function CreateUser() {
   const [user, setUser] = useState({});
@@ -6,7 +7,7 @@ function CreateUser() {
   const [tableData, setTableData] = useState([]);
 
   async function handleClick() {
-    const result = await fetch("http://localhost:5000/users/add", {
+    const result = await fetch(`${db_url}/users/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -19,7 +20,7 @@ function CreateUser() {
   }
 
   async function fetchUsers() {
-    const usersres = await fetch("http://localhost:5000/users", {
+    const usersres = await fetch(`${db_url}/users`, {
       method: "GET",
       headers: {
         "Content-Type": "application",
