@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import ExercisesList from "./components/ExercisesList";
 import CreateUser from "./components/CreateUser";
 import CreateExercise from "./components/CreateExercise";
@@ -15,16 +15,9 @@ function App() {
           <Navbar />
           <br />
           <Routes>
-            <Route
-              path="excersise-tracker/"
-              exact
-              element={<ExercisesList />}
-            />
-            <Route path="excersise-tracker/user" element={<CreateUser />} />
-            <Route
-              path="excersise-tracker/create"
-              element={<CreateExercise />}
-            />
+            <Route path="/" exact element={<ExercisesList />} />
+            <Route path="/user" element={<CreateUser />} />
+            <Route path="/create" element={<CreateExercise />} />
           </Routes>
         </Router>
       </div>

@@ -5,7 +5,7 @@ function navbar() {
   return (
     <nav className=" navbar navbar-dark navbar-expand-lg bg-dark">
       <div className="">
-        <Link to="/" className="navbar-brand ml-5 ">
+        <Link to="excersises-tracker/" className="navbar-brand ml-5 ">
           ... Exercise Tracker
         </Link>
       </div>
