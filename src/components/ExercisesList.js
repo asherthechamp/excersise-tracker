@@ -24,7 +24,7 @@ function ExercisesList() {
               <td>
                 <Link
                   className="btn btn-primary"
-                  to="excercises-tracker/create"
+                  to="/create"
                   state={{ eid: exercise._id }}
                 >
                   Edit
