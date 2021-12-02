@@ -15,9 +15,16 @@ function App() {
           <Navbar />
           <br />
           <Routes>
-            <Route path="/" exact element={<ExercisesList />} />
-            <Route path="/user" element={<CreateUser />} />
-            <Route path="/create" element={<CreateExercise />} />
+            <Route
+              path="excersise-tracker/"
+              exact
+              element={<ExercisesList />}
+            />
+            <Route path="excersise-tracker/user" element={<CreateUser />} />
+            <Route
+              path="excersise-tracker/create"
+              element={<CreateExercise />}
+            />
           </Routes>
         </Router>
       </div>
