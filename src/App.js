@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ExercisesList from "./components/ExercisesList";
 import CreateUser from "./components/CreateUser";
 import CreateExercise from "./components/CreateExercise";
